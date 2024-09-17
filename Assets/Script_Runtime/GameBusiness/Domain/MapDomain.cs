@@ -10,4 +10,5 @@ public static class MapDomain {
         return entity;
 
     }
+
 }

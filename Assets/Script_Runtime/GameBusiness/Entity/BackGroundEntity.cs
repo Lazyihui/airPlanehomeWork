@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 
-public class MapEleEntity : MonoBehaviour {
+public class BackgroundEntity : MonoBehaviour {
 
     public int id;
 

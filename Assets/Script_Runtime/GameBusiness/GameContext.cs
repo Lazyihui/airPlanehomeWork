@@ -9,6 +9,8 @@ public class GameContext {
 
     // repo
     public MapRespository mapRespository;
+
+    public backgroundRespository backgroundRespository;
     // inject
     public AssetsContext assetsContext;
 
@@ -18,6 +20,7 @@ public class GameContext {
 
         // repo
         mapRespository = new MapRespository();
+        backgroundRespository = new backgroundRespository();
     }
 
     public void Inject(AssetsContext assetsContext) {

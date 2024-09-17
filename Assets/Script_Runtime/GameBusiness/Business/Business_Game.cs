@@ -8,6 +8,9 @@ public static class Game_Business {
         MapEntity map = MapDomain.Spawn(ctx);
         Debug.Log("map id: " + map.id);
 
+        BackgroundEntity bg = BackgroundDomain.Spawn(ctx);
+        Debug.Log("bg id: " + bg.id);
+
     }
 
 

@@ -9,11 +9,11 @@ public class GameEntity {
 
     public int mapIDRecord;
 
-    public int mapEleIDRecord;
+    public int backgroundIDRecord;
 
 
     public GameEntity() {
         mapIDRecord = 0;
-        mapEleIDRecord = 0;
+        backgroundIDRecord = 0;
     }
 }

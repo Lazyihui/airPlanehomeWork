@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: de96f9002bf96df43b8f227d37fc6100
   m_SerializeEntries:
-  - m_GUID: 61224c4373b231843aefe345927668e7
-    m_Address: MapElementEntity
+  - m_GUID: f9006569b07b0c44baa2f3c681d30ec6
+    m_Address: BackgroundEntity
     m_ReadOnly: 0
     m_SerializedLabels:
     - Entity
