@@ -17,13 +17,15 @@ public class Main : MonoBehaviour {
         ModuleAssets.Load(ctx.assetsContext);
 
         // ==== Phase: Enter Game ====
-
+        Game_Business.Enter(ctx.gameContext);
     }
 
 
     void Update() {
 
     }
+
+
     // 当 安卓/iOS 应用程序退出时调用
     void OnApplicationQuit() {
         TearDown();

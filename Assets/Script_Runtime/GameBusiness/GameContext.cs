@@ -9,7 +9,8 @@ public class GameContext {
 
     // repo
     public MapRespository mapRespository;
-
+    // inject
+    public AssetsContext assetsContext;
 
     public GameContext() {
         // entity
@@ -17,5 +18,9 @@ public class GameContext {
 
         // repo
         mapRespository = new MapRespository();
+    }
+
+    public void Inject(AssetsContext assetsContext) {
+        this.assetsContext = assetsContext;
     }
 }

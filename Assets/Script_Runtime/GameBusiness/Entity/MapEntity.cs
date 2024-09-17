@@ -9,8 +9,6 @@ public class MapEntity : MonoBehaviour {
 
     public int id;
 
-    public float moveSpeed;
-
 
     public void Ctor() {
     }

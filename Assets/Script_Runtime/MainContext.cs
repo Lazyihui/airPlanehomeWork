@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainContext {
 
-    
+
     public GameContext gameContext;
 
     public AssetsContext assetsContext;
@@ -15,6 +15,8 @@ public class MainContext {
     }
 
 
-    public void Inject() { }
+    public void Inject() {
+        gameContext.Inject(assetsContext);
+    }
 
 }
