@@ -20,7 +20,7 @@ public static class GameFactory {
         return entity;
     }
 
-    public static BackgroundEntity Background_Create(GameContext ctx) {
+    public static BackgroundEntity Background_Create(GameContext ctx,Vector3 pos) {
         bool has = ctx.assetsContext.entiies.TryGetValue("BackgroundEntity", out GameObject prefab);
         if (!has) {
             Debug.LogError("BackgroundEntity prefab not found");
@@ -29,6 +29,10 @@ public static class GameFactory {
 
         GameObject go = GameObject.Instantiate(prefab);
         BackgroundEntity entity = go.GetComponent<BackgroundEntity>();
+
+        entity.Ctor();
+        entity.SetPos(pos);
+
 
         entity.id = ctx.gameEntity.backgroundIDRecord++;
         return entity;

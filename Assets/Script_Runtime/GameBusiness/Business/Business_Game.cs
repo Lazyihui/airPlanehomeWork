@@ -6,10 +6,10 @@ public static class Game_Business {
     public static void Enter(GameContext ctx) {
 
         MapEntity map = MapDomain.Spawn(ctx);
-        Debug.Log("map id: " + map.id);
 
-        BackgroundEntity bg = BackgroundDomain.Spawn(ctx);
-        Debug.Log("bg id: " + bg.id);
+        BackgroundDomain.Spawn(ctx, Vector3.zero);
+        BackgroundDomain.Spawn(ctx, new Vector3(0, 0, -159));
+
 
     }
 
@@ -44,7 +44,13 @@ public static class Game_Business {
 
 
     static void LogicTick(GameContext ctx, float dt) {
+        int lenBg = ctx.backgroundRespository.TakeAll(out BackgroundEntity[] bgs);
+        for (int i = 0; i < lenBg; i++) {
+            BackgroundEntity bg = bgs[i];
 
+            BackgroundDomain.Move(bg, dt);
+            Debug.Log(bg.transform.position);
+        }
     }
 
 

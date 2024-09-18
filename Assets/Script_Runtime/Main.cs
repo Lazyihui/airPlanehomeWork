@@ -22,7 +22,9 @@ public class Main : MonoBehaviour {
 
 
     void Update() {
+        float dt = Time.deltaTime;
 
+        Game_Business.Tick(ctx.gameContext, dt);
     }
 
 
