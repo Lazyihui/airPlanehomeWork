@@ -6,6 +6,7 @@ using UnityEngine;
 public class GameContext {
 
     public GameEntity gameEntity;
+    public ModuleInput moduleInput;
 
     // repo
     public MapRespository mapRespository;
@@ -17,13 +18,13 @@ public class GameContext {
     public GameContext() {
         // entity
         gameEntity = new GameEntity();
-
         // repo
         mapRespository = new MapRespository();
         backgroundRespository = new backgroundRespository();
     }
 
-    public void Inject(AssetsContext assetsContext) {
+    public void Inject(AssetsContext assetsContext, ModuleInput moduleInput) {
         this.assetsContext = assetsContext;
+        this.moduleInput = moduleInput;
     }
 }

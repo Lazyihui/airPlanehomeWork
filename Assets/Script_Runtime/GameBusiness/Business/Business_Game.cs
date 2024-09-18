@@ -39,7 +39,7 @@ public static class Game_Business {
 
 
     static void PreTick(GameContext ctx, float dt) {
-
+        ctx.moduleInput.ProcessMove();
     }
 
 
@@ -49,8 +49,8 @@ public static class Game_Business {
             BackgroundEntity bg = bgs[i];
 
             BackgroundDomain.Move(bg, dt);
-            Debug.Log(bg.transform.position);
         }
+
     }
 
 
