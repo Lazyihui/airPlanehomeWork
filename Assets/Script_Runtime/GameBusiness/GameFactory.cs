@@ -38,5 +38,21 @@ public static class GameFactory {
         return entity;
     }
 
+    public static PlayerEntity Player_Create(GameContext ctx) {
+        bool has = ctx.assetsContext.entiies.TryGetValue("PlayerEntity", out GameObject prefab);
+        if (!has) {
+            Debug.LogError("PlayerEntity prefab not found");
+            return null;
+        }
+
+        GameObject go = GameObject.Instantiate(prefab);
+        PlayerEntity entity = go.GetComponent<PlayerEntity>();
+
+        entity.Ctor();
+
+        entity.id = ctx.gameEntity.playerIDRecord++;
+        return entity;
+    }   
+
 
 }

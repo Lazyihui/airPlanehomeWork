@@ -10,6 +10,7 @@ public static class Game_Business {
         BackgroundDomain.Spawn(ctx, Vector3.zero);
         BackgroundDomain.Spawn(ctx, new Vector3(0, 0, -159));
 
+        PlayerDomain.Spawn(ctx);
 
     }
 
@@ -49,6 +50,14 @@ public static class Game_Business {
             BackgroundEntity bg = bgs[i];
 
             BackgroundDomain.Move(bg, dt);
+        }
+
+        int lenPlayer = ctx.playerRespository.TakeAll(out PlayerEntity[] players);
+
+        for (int i = 0; i < lenPlayer; i++) {
+            PlayerEntity player = players[i];
+
+            PlayerDomain.Move(ctx, player, ctx.moduleInput.moveAxis, dt);
         }
 
     }

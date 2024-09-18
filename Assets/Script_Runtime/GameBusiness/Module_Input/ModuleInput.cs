@@ -24,9 +24,8 @@ public class ModuleInput {
         } else if (Input.GetKey(KeyCode.D)) {
             moveAxis += Vector3.right;
         }
-
+        moveAxis.Normalize();
         this.moveAxis = moveAxis;
-
 
     }
 }

@@ -12,6 +12,9 @@ public class GameContext {
     public MapRespository mapRespository;
 
     public backgroundRespository backgroundRespository;
+
+    public PlayerRespository playerRespository;
+
     // inject
     public AssetsContext assetsContext;
 
@@ -21,6 +24,7 @@ public class GameContext {
         // repo
         mapRespository = new MapRespository();
         backgroundRespository = new backgroundRespository();
+        playerRespository = new PlayerRespository();
     }
 
     public void Inject(AssetsContext assetsContext, ModuleInput moduleInput) {
