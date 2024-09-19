@@ -10,5 +10,8 @@ public static class RocketDomain {
     }
 
 
-    public static void Move() { }
+    public static void Move(GameContext ctx, RocketEntity rocket, float dt) {
+        rocket.Move(dt);
+    }
+
 }

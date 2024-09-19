@@ -12,8 +12,6 @@ public static class Game_Business {
 
         PlayerDomain.Spawn(ctx);
 
-        RocketDomain.Spawn(ctx, new Vector3(44, 0, 0));
-
     }
 
 
@@ -60,6 +58,14 @@ public static class Game_Business {
             PlayerEntity player = players[i];
 
             PlayerDomain.Move(ctx, player, ctx.moduleInput.moveAxis, dt);
+            PlayerDomain.PlayerToSpawnRocket(ctx, player, dt);
+        }
+
+        int lenRocket = ctx.rocketRespository.TakeAll(out RocketEntity[] rockets);  
+        for (int i = 0; i < lenRocket; i++) {
+            RocketEntity rocket = rockets[i];
+
+            RocketDomain.Move(ctx, rocket, dt);
         }
 
     }

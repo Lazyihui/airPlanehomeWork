@@ -10,8 +10,10 @@ public class PlayerEntity : MonoBehaviour {
 
     public float moveSpeed;
 
+    public float rocketSpawnTimer;
     public void Ctor() {
         moveSpeed = 15;
+        rocketSpawnTimer = 1 ;
     }
 
     public void Move(Vector3 moveAxis, float dt) {

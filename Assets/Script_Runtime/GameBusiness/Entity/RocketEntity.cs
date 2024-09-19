@@ -9,12 +9,18 @@ public class RocketEntity : MonoBehaviour {
     public int moveSpeed;
 
     public void Ctor() {
-        moveSpeed = 10;
+        moveSpeed = 20;
     }
 
     public void SetPos(Vector3 pos) {
         transform.position = pos;
     }
 
-    
+    public void Move(float dt) {
+        Vector3 pos = transform.position;
+        pos.z += moveSpeed * dt ;
+        transform.position = pos;
+    }
+
+
 }
