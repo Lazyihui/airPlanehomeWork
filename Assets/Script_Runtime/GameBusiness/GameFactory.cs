@@ -20,7 +20,7 @@ public static class GameFactory {
         return entity;
     }
 
-    public static BackgroundEntity Background_Create(GameContext ctx,Vector3 pos) {
+    public static BackgroundEntity Background_Create(GameContext ctx, Vector3 pos) {
         bool has = ctx.assetsContext.entiies.TryGetValue("BackgroundEntity", out GameObject prefab);
         if (!has) {
             Debug.LogError("BackgroundEntity prefab not found");
@@ -52,7 +52,23 @@ public static class GameFactory {
 
         entity.id = ctx.gameEntity.playerIDRecord++;
         return entity;
-    }   
+    }
 
+    public static RocketEntity Rocket_Create(GameContext ctx, Vector3 pos) {
+        bool has = ctx.assetsContext.entiies.TryGetValue("RocketEntity", out GameObject prefab);
+        if (!has) {
+            Debug.LogError("RocketEntity prefab not found");
+            return null;
+        }
+
+        GameObject go = GameObject.Instantiate(prefab);
+        RocketEntity entity = go.GetComponent<RocketEntity>();
+
+        entity.Ctor();
+        entity.SetPos(pos);
+
+        entity.id = ctx.gameEntity.rocketIDRecord++;
+        return entity;
+    }
 
 }

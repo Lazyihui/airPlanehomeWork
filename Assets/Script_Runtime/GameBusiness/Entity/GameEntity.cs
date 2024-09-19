@@ -13,10 +13,13 @@ public class GameEntity {
 
     public int playerIDRecord;
 
+    public int rocketIDRecord;
+
 
     public GameEntity() {
         mapIDRecord = 0;
         backgroundIDRecord = 0;
         playerIDRecord = 0;
+        rocketIDRecord = 0;
     }
 }

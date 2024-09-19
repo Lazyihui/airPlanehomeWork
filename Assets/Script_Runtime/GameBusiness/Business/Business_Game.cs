@@ -12,6 +12,8 @@ public static class Game_Business {
 
         PlayerDomain.Spawn(ctx);
 
+        RocketDomain.Spawn(ctx, new Vector3(44, 0, 0));
+
     }
 
 
