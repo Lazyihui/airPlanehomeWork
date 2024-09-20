@@ -17,16 +17,18 @@ public static class PlayerDomain {
     }
 
     public static void PlayerToSpawnRocket(GameContext ctx, PlayerEntity player, float dt) {
+        player.rocketSpawnTimer -= dt;
+        if (ctx.moduleInput.isGetKeyDownSpace) {
 
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            Debug.Log("PlayerDomain.PlayerToSpawnRocket");
-            player.rocketSpawnTimer -= dt;
             Debug.Log("player.rocketSpawnTimer:" + player.rocketSpawnTimer);
-            
+
             if (player.rocketSpawnTimer <= 0) {
                 RocketDomain.Spawn(ctx, player.transform.position);
                 player.rocketSpawnTimer = 1;
+                ctx.moduleInput.isGetKeyDownSpace = false;
             }
+
+
         }
     }
 }

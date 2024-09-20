@@ -5,9 +5,11 @@ using UnityEngine;
 public class ModuleInput {
     public Vector3 moveAxis;
 
+    public bool isGetKeyDownSpace;
 
     public ModuleInput() {
         moveAxis = Vector3.zero;
+        isGetKeyDownSpace = false;
     }
 
     public void ProcessMove() {
@@ -26,6 +28,10 @@ public class ModuleInput {
         }
         moveAxis.Normalize();
         this.moveAxis = moveAxis;
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            isGetKeyDownSpace = true;
+        }
 
     }
 }

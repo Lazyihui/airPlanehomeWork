@@ -49,6 +49,8 @@ public static class GameFactory {
         PlayerEntity entity = go.GetComponent<PlayerEntity>();
 
         entity.Ctor();
+        entity.rocketSpawnTimer = 1.0f;
+        
 
         entity.id = ctx.gameEntity.playerIDRecord++;
         return entity;
