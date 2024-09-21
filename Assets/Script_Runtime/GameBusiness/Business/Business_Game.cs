@@ -7,10 +7,12 @@ public static class Game_Business {
 
         MapEntity map = MapDomain.Spawn(ctx);
 
-        BackgroundDomain.Spawn(ctx, Vector3.zero);
-        BackgroundDomain.Spawn(ctx, new Vector3(0, 0, -159));
+        BackgroundDomain.Spawn(ctx, new Vector3(0, -5, 0));
+        BackgroundDomain.Spawn(ctx, new Vector3(0, -5, -159));
 
         PlayerDomain.Spawn(ctx);
+
+        MstDomain.Spawn(ctx);
 
     }
 

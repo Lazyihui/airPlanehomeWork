@@ -17,6 +17,7 @@ public class GameContext {
 
     public RocketRespository rocketRespository;
 
+    public MstRespository mstRespository;
     // inject
     public AssetsContext assetsContext;
 
@@ -28,6 +29,7 @@ public class GameContext {
         backgroundRespository = new backgroundRespository();
         playerRespository = new PlayerRespository();
         rocketRespository = new RocketRespository();
+        mstRespository = new MstRespository();
     }
 
     public void Inject(AssetsContext assetsContext, ModuleInput moduleInput) {

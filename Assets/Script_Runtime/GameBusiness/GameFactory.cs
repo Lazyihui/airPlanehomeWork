@@ -50,7 +50,7 @@ public static class GameFactory {
 
         entity.Ctor();
         entity.rocketSpawnTimer = 1.0f;
-        
+
 
         entity.id = ctx.gameEntity.playerIDRecord++;
         return entity;
@@ -73,4 +73,20 @@ public static class GameFactory {
         return entity;
     }
 
+
+    public static MstEntity Mst_Create(GameContext ctx) {
+        bool has = ctx.assetsContext.entiies.TryGetValue("MstEntity", out GameObject prefab);
+        if (!has) {
+            Debug.LogError("MstEntity prefab not found");
+            return null;
+        }
+
+        GameObject go = GameObject.Instantiate(prefab);
+        MstEntity entity = go.GetComponent<MstEntity>();
+
+        entity.Ctor();
+        entity.id = ctx.gameEntity.mstIDRecord++;
+
+        return entity;
+    }
 }
